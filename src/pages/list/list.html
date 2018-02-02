@@ -9,7 +9,7 @@
 
 <ion-content>
     <ion-list>
-        <button ion-item *ngFor="let efecto of efectos" (click)="goToDetail(efecto)">
+        <button ion-item *ngFor="let efecto of efectos" (click)="goToDetail(efecto.id)">
           {{ efecto.title }}
         </button>  
       </ion-list>

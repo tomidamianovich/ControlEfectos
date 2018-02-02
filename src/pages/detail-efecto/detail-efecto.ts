@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Injectable } from '@angular/core';
+import { EfectosService } from '../../services/efectos.service';
+
 
 /**
  * Generated class for the DetailEfectoPage page.
@@ -15,12 +16,15 @@ import { Injectable } from '@angular/core';
   templateUrl: 'detail-efecto.html',
 })
 export class DetailEfectoPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  efecto= {id:null,title:null,description:null};
+  id = null;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public efectosService:EfectosService) {
+    this.id = navParams.get('id');
+    this.efecto = efectosService.getEfecto(this.id);
   }
-
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailEfectoPage');
   }
 
-}
+} 

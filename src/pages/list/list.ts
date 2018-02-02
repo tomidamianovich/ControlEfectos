@@ -14,11 +14,9 @@ export class ListPage {
   @ViewChild('myNav') nav: NavController
   constructor(public navCtrl: NavController,public NavParams: NavController, public EfectosService:EfectosService) {
     this.efectos = EfectosService.getEfectos();
-
 }
 
-public goToDetail(){
-  this.navCtrl.push(DetailEfectoPage);
+public goToDetail(id){
+  this.navCtrl.push(DetailEfectoPage,{id:id});
 }
-
 }

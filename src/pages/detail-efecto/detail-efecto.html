@@ -7,25 +7,25 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>detailEfecto</ion-title>
+    <ion-title>Detalle de Efectos</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
   <ion-list>
 
     <ion-item>
       <ion-label floating>Nombre del Efecto</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="efecto.title"></ion-input>
     </ion-item>
   
     <ion-item>
       <ion-label floating>Descripción</ion-label>
-      <ion-textarea></ion-textarea>
+      <ion-textarea [(ngModel)]="efecto.description"></ion-textarea>
     </ion-item>
   
   </ion-list>
-  <button ion-button>Agregar Efecto</button>
+  <button ion-button block>Agregar Efecto</button>
 </ion-content>
