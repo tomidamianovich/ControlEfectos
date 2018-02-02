@@ -15,8 +15,22 @@ export class EfectosService{
       public getEfecto(id){
         return this.efectos.filter(function(e, i){ return e.id == id  })[0] || {id:null,title:null,description:null};
       }
-       
-}
-    
-    
+      public createEfecto(efecto){
+        this.efectos.push(efecto);
+      } 
+      public editEfecto(efecto){
+        for (let i=0; i < this.efectos.length; i++){
+          if(this.efectos[i].id == efecto){
+            this.efectos[i] = efecto;
+          }
+      }       
+      }
 
+      public deleteEFecto(efecto){
+        for (let i=0; i < this.efectos.length; i++){
+          if(this.efectos[i].id == efecto.id){
+            this.efectos.splice(i,1);
+          }
+      }    
+      }
+}

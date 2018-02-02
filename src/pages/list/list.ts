@@ -19,4 +19,9 @@ export class ListPage {
 public goToDetail(id){
   this.navCtrl.push(DetailEfectoPage,{id:id});
 }
+
+public createEfecto(id){
+  this.navCtrl.push(DetailEfectoPage,{id:0});
+}
+
 }
