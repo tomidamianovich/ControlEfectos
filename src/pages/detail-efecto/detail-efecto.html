@@ -13,20 +13,42 @@
 </ion-header>
 
 
-<ion-content >
-  <ion-list>
 
+<ion-content *ngIf="show">
+  <ion-list>
+      <br>
+      <br>
+      <ion-item>
+          <ion-label>Tipo de Armamento</ion-label>
+          <ion-select [(ngModel)]="efecto.tipo">
+            <ion-option  value="Ametralladora">Ametralladora</ion-option>
+            <ion-option  value="Rifle">Rifle</ion-option>
+            <ion-option  value="Munición">Munición</ion-option>
+            <ion-option  value="Granada">Granada</ion-option>
+            <ion-option  value="Vehiculo">Vehiculo</ion-option>
+          </ion-select>
+        </ion-item>
+    <br>
     <ion-item>
-      <ion-label floating>Nombre del Efecto</ion-label>
+      <ion-label >Nombre (INE) del Efecto</ion-label>
       <ion-input type="text" [(ngModel)]="efecto.title"></ion-input>
     </ion-item>
-  
+    <br>
     <ion-item>
-      <ion-label floating>Descripción</ion-label>
+        <ion-label >NNE</ion-label>
+        <ion-input [(ngModel)]="efecto.nne"></ion-input>
+      </ion-item>
+      <br>
+    <ion-item>
+      <ion-label >Descripción</ion-label>
       <ion-textarea [(ngModel)]="efecto.description"></ion-textarea>
     </ion-item>
-  
+
+ <br>
+     
   </ion-list>
+  <button ion-button block (click)="takePhoto()">Agregar una foto</button>
+   
   <br><button ion-button block (click)="addEfecto()">Editar Efecto</button>
-  <br><button ion-button block (click)="deleteEfecto()" color="danger">Eliminar Efecto</button>
+  <br><button ion-button block (click)="deleteEfecto()" color="danger" *ngIf=show>Eliminar Efecto</button>
 </ion-content>

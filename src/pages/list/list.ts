@@ -11,9 +11,12 @@ import { DetailEfectoPage } from '../detail-efecto/detail-efecto';
 export class ListPage {
   
   efectos = [];
-  @ViewChild('myNav') nav: NavController
+  @ViewChild('myNav') nav: NavController;
   constructor(public navCtrl: NavController,public NavParams: NavController, public EfectosService:EfectosService) {
-    this.efectos = EfectosService.getEfectos();
+    EfectosService.getEfectos().valueChanges().subscribe( efectos => {
+        console.log(efectos);
+        this.efectos = efectos;
+       });
 }
 
 public goToDetail(id){

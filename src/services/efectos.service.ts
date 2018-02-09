@@ -1,36 +1,33 @@
 import { Injectable } from '@angular/core';
+import {AngularFireDatabase} from 'angularfire2/database/database';
 
 @Injectable()
 export class EfectosService{
 
-    efectos = [
-        {id:1, title:'Efecto 1', description:'Descripcion del efecto 1'},
-        {id:2, title:'Efecto 2', description:'Descripcion del efecto 2'},
-        {id:3, title:'Efecto 3', description:'Descripcion del efecto 3'}
-      ]; 
+      constructor(public  afDB: AngularFireDatabase) {}   
+      
+      efectos = []; 
       
       public getEfectos(){
-        return this.efectos;
+        return this.afDB.list('efectos/');
+        //return this.efectos;
+          
       }
       public getEfecto(id){
-        return this.efectos.filter(function(e, i){ return e.id == id  })[0] || {id:null,title:null,description:null};
+        return this.afDB.object('efectos/'+id);
+        //return this.efectos.filter(function(e, i){ return e.id == id  })[0] || {id:null,title:null,description:null};
       }
       public createEfecto(efecto){
-        this.efectos.push(efecto);
+        this.afDB.database.ref('efectos/'+efecto.id).set(efecto);
+        //this.efectos.push(efecto);
       } 
       public editEfecto(efecto){
-        for (let i=0; i < this.efectos.length; i++){
-          if(this.efectos[i].id == efecto){
-            this.efectos[i] = efecto;
-          }
-      }       
+        this.afDB.database.ref('efectos/'+efecto.id).set(efecto);
       }
 
       public deleteEFecto(efecto){
-        for (let i=0; i < this.efectos.length; i++){
-          if(this.efectos[i].id == efecto.id){
-            this.efectos.splice(i,1);
-          }
-      }    
+        this.afDB.database.ref('efectos/'+efecto.id).remove();
       }
+
+    
 }
