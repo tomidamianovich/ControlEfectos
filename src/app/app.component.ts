@@ -22,9 +22,10 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Inicio', component: HomePage, icon: "ios-contact-outline"},
+      { title: 'Perfil de Usuario', component: HomePage, icon: "ios-contact-outline"},
       { title: 'Listado', component: ListPage, icon: "ios-list-box-outline"},
       { title: 'Busqueda', component: BusquedaPage, icon:"ios-search-outline" },
+      { title: 'Cerrar Sesión', component: HomePage, icon:"ios-log-out-outline" },
     ];
 
   }

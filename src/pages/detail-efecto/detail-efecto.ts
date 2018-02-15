@@ -4,8 +4,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EfectosService } from '../../services/efectos.service';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
-
-
 @IonicPage()
 @Component({
   selector: 'page-detail-efecto',

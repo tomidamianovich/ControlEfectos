@@ -1,12 +1,13 @@
 webpackJsonp([2],{
 
-/***/ 121:
+/***/ 148:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EfectosService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BusquedaPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database_database__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_efectos_service__ = __webpack_require__(71);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,51 +19,47 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var EfectosService = (function () {
-    function EfectosService(afDB) {
-        this.afDB = afDB;
-        this.efectos = [];
+
+/**
+ * Generated class for the BusquedaPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var BusquedaPage = (function () {
+    function BusquedaPage(navCtrl, navParams, EfectosService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.EfectosService = EfectosService;
+        this.efectos = EfectosService.buscarEfectos();
+        console.log(this.efectos);
     }
-    EfectosService.prototype.getEfectos = function () {
-        return this.afDB.list('efectos/');
-        //return this.efectos;
+    BusquedaPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad BusquedaPage');
     };
-    EfectosService.prototype.getEfecto = function (id) {
-        return this.afDB.object('efectos/' + id);
-        //return this.efectos.filter(function(e, i){ return e.id == id  })[0] || {id:null,title:null,description:null};
-    };
-    EfectosService.prototype.createEfecto = function (efecto) {
-        this.afDB.database.ref('efectos/' + efecto.id).set(efecto);
-        //this.efectos.push(efecto);
-    };
-    EfectosService.prototype.editEfecto = function (efecto) {
-        this.afDB.database.ref('efectos/' + efecto.id).set(efecto);
-    };
-    EfectosService.prototype.deleteEFecto = function (efecto) {
-        this.afDB.database.ref('efectos/' + efecto.id).remove();
-    };
-    EfectosService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object])
-    ], EfectosService);
-    return EfectosService;
-    var _a;
+    BusquedaPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-busqueda',template:/*ion-inline-start:"C:\Users\TomasDamianovich\ControlEfectos\src\pages\busqueda\busqueda.html"*/'<!--\n\n  Generated template for the BusquedaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n      <button ion-button menuToggle>\n\n          <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n\n\n    <ion-title>Busqueda</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <h5> Ingrese los campos de la busqueda</h5>\n\n    <form  #Busqueda="ngForm">\n\n      \n\n              <ion-item>\n\n                  <ion-label>Tipo de Armamento</ion-label>\n\n                  <ion-select>\n\n                    <ion-option value="Ametralladora">Ametralladora</ion-option>\n\n                    <ion-option value="Rifle">Rifle</ion-option>\n\n                    <ion-option value="Munición">Munición</ion-option>\n\n                    <ion-option value="Granada">Granada</ion-option>\n\n                    <ion-option value="Vehiculo">Vehiculo</ion-option>\n\n                  </ion-select>\n\n                </ion-item>\n\n                <br>\n\n              <ion-item>\n\n                  <ion-label>Nombre (INE) o NNE </ion-label>\n\n                  <ion-input></ion-input>\n\n                </ion-item>\n\n            \n\n                <br>\n\n       \n\n      <ion-row>\n\n        <ion-col class="signup-col">\n\n          <button ion-button class="submit-btn" full type="submit" >Buscar</button>\n\n          \n\n        </ion-col>\n\n      </ion-row>\n\n      \n\n    </form>\n\n  </ion-content>\n\n      '/*ion-inline-end:"C:\Users\TomasDamianovich\ControlEfectos\src\pages\busqueda\busqueda.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_efectos_service__["a" /* EfectosService */]])
+    ], BusquedaPage);
+    return BusquedaPage;
 }());
 
-//# sourceMappingURL=efectos.service.js.map
+//# sourceMappingURL=busqueda.js.map
 
 /***/ }),
 
-/***/ 148:
+/***/ 149:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailEfectoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(398);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_efectos_service__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_efectos_service__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__ = __webpack_require__(262);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -180,58 +177,12 @@ var DetailEfectoPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
             selector: 'page-detail-efecto',template:/*ion-inline-start:"C:\Users\TomasDamianovich\ControlEfectos\src\pages\detail-efecto\detail-efecto.html"*/'<!--\n\n  Generated template for the DetailEfectoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Detalle de Efectos</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content *ngIf="show">\n\n  <ion-list>\n\n      <br>\n\n      <br>\n\n      <ion-item>\n\n          <ion-label>Tipo de Armamento</ion-label>\n\n          <ion-select [(ngModel)]="efecto.tipo">\n\n            <ion-option  value="Ametralladora">Ametralladora</ion-option>\n\n            <ion-option  value="Rifle">Rifle</ion-option>\n\n            <ion-option  value="Munición">Munición</ion-option>\n\n            <ion-option  value="Granada">Granada</ion-option>\n\n            <ion-option  value="Vehiculo">Vehiculo</ion-option>\n\n          </ion-select>\n\n        </ion-item>\n\n    <br>\n\n    <ion-item>\n\n      <ion-label >Nombre (INE) del Efecto</ion-label>\n\n      <ion-input type="text" [(ngModel)]="efecto.title"></ion-input>\n\n    </ion-item>\n\n    <br>\n\n    <ion-item>\n\n        <ion-label >NNE</ion-label>\n\n        <ion-input [(ngModel)]="efecto.nne"></ion-input>\n\n      </ion-item>\n\n      <br>\n\n    <ion-item>\n\n      <ion-label >Descripción</ion-label>\n\n      <ion-textarea [(ngModel)]="efecto.description"></ion-textarea>\n\n    </ion-item>\n\n\n\n <br>\n\n     \n\n  </ion-list>\n\n  <button ion-button block (click)="takePhoto()">Agregar una foto</button>\n\n   \n\n  <br><button ion-button block (click)="addEfecto()">Editar Efecto</button>\n\n  <br><button ion-button block (click)="deleteEfecto()" color="danger" *ngIf=show>Eliminar Efecto</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\TomasDamianovich\ControlEfectos\src\pages\detail-efecto\detail-efecto.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_efectos_service__["a" /* EfectosService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_efectos_service__["a" /* EfectosService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__["a" /* Camera */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_efectos_service__["a" /* EfectosService */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__["a" /* Camera */]])
     ], DetailEfectoPage);
     return DetailEfectoPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=detail-efecto.js.map
-
-/***/ }),
-
-/***/ 149:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BusquedaPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the BusquedaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var BusquedaPage = (function () {
-    function BusquedaPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    BusquedaPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad BusquedaPage');
-    };
-    BusquedaPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-busqueda',template:/*ion-inline-start:"C:\Users\TomasDamianovich\ControlEfectos\src\pages\busqueda\busqueda.html"*/'<!--\n  Generated template for the BusquedaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n      <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n\n    <ion-title>Busqueda</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <h5> Ingrese los campos de la busqueda</h5>\n    <form  #Busqueda="ngForm">\n      \n              <ion-item>\n                  <ion-label>Tipo de Armamento</ion-label>\n                  <ion-select>\n                    <ion-option value="Ametralladora">Ametralladora</ion-option>\n                    <ion-option value="Rifle">Rifle</ion-option>\n                    <ion-option value="Munición">Munición</ion-option>\n                    <ion-option value="Granada">Granada</ion-option>\n                    <ion-option value="Vehiculo">Vehiculo</ion-option>\n                  </ion-select>\n                </ion-item>\n                <br>\n              <ion-item>\n                  <ion-label>Nombre (INE) o NNE </ion-label>\n                  <ion-input></ion-input>\n                </ion-item>\n            \n                <br>\n       \n      <ion-row>\n        <ion-col class="signup-col">\n          <button ion-button class="submit-btn" full type="submit" >Buscar</button>\n          \n        </ion-col>\n      </ion-row>\n      \n    </form>\n  </ion-content>\n      '/*ion-inline-end:"C:\Users\TomasDamianovich\ControlEfectos\src\pages\busqueda\busqueda.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], BusquedaPage);
-    return BusquedaPage;
-}());
-
-//# sourceMappingURL=busqueda.js.map
 
 /***/ }),
 
@@ -257,11 +208,11 @@ webpackEmptyAsyncContext.id = 161;
 
 var map = {
 	"../pages/busqueda/busqueda.module": [
-		500,
+		499,
 		1
 	],
 	"../pages/detail-efecto/detail-efecto.module": [
-		499,
+		500,
 		0
 	]
 };
@@ -323,8 +274,8 @@ var HomePage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_efectos_service__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__detail_efecto_detail_efecto__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_efectos_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__detail_efecto_detail_efecto__ = __webpack_require__(149);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -402,12 +353,12 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_camera__ = __webpack_require__(262);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(303);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_efectos_service__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_detail_efecto_detail_efecto__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angularfire2__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_efectos_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_detail_efecto_detail_efecto__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angularfire2__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angularfire2_database__ = __webpack_require__(492);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angularfire2_auth__ = __webpack_require__(495);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_busqueda_busqueda__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_busqueda_busqueda__ = __webpack_require__(148);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -453,8 +404,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/detail-efecto/detail-efecto.module#DetailEfectoPageModule', name: 'DetailEfectoPage', segment: 'detail-efecto', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/busqueda/busqueda.module#BusquedaPageModule', name: 'BusquedaPage', segment: 'busqueda', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/busqueda/busqueda.module#BusquedaPageModule', name: 'BusquedaPage', segment: 'busqueda', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/detail-efecto/detail-efecto.module#DetailEfectoPageModule', name: 'DetailEfectoPage', segment: 'detail-efecto', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_11_angularfire2__["a" /* AngularFireModule */].initializeApp(firebaseConfig),
@@ -496,7 +447,7 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(304);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(305);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_busqueda_busqueda__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_busqueda_busqueda__ = __webpack_require__(148);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -522,9 +473,10 @@ var MyApp = (function () {
         this.initializeApp();
         // used for an example of ngFor and navigation
         this.pages = [
-            { title: 'Inicio', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */], icon: "ios-contact-outline" },
+            { title: 'Perfil de Usuario', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */], icon: "ios-contact-outline" },
             { title: 'Listado', component: __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */], icon: "ios-list-box-outline" },
             { title: 'Busqueda', component: __WEBPACK_IMPORTED_MODULE_6__pages_busqueda_busqueda__["a" /* BusquedaPage */], icon: "ios-search-outline" },
+            { title: 'Cerrar Sesión', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */], icon: "ios-log-out-outline" },
         ];
     }
     MyApp.prototype.initializeApp = function () {
@@ -554,6 +506,63 @@ var MyApp = (function () {
 }());
 
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 71:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EfectosService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database_database__ = __webpack_require__(111);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var EfectosService = (function () {
+    function EfectosService(afDB) {
+        this.afDB = afDB;
+        this.efectos = [];
+    }
+    EfectosService.prototype.getEfectos = function () {
+        return this.afDB.list('efectos/');
+        //return this.efectos;          
+    };
+    EfectosService.prototype.buscarEfectos = function () {
+        return this.afDB.list('efectos/');
+        // return this.afDB.database.ref().child('efectos').orderByChild('tipo').equalTo('Ametralladora');
+    };
+    EfectosService.prototype.getEfecto = function (id) {
+        return this.afDB.object('efectos/' + id);
+        //return this.efectos.filter(function(e, i){ return e.id == id  })[0] || {id:null,title:null,description:null};
+    };
+    EfectosService.prototype.createEfecto = function (efecto) {
+        this.afDB.database.ref('efectos/' + efecto.id).set(efecto);
+        //this.efectos.push(efecto);
+    };
+    EfectosService.prototype.editEfecto = function (efecto) {
+        this.afDB.database.ref('efectos/' + efecto.id).set(efecto);
+    };
+    EfectosService.prototype.deleteEFecto = function (efecto) {
+        this.afDB.database.ref('efectos/' + efecto.id).remove();
+    };
+    EfectosService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object])
+    ], EfectosService);
+    return EfectosService;
+    var _a;
+}());
+
+//# sourceMappingURL=efectos.service.js.map
 
 /***/ })
 

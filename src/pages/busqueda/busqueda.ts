@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {  EfectosService } from '../../services/efectos.service';
 
 /**
  * Generated class for the BusquedaPage page.
@@ -15,7 +16,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BusquedaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  efectos:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public EfectosService:EfectosService) {
+    this.efectos=EfectosService.buscarEfectos();
+    console.log(this.efectos);
   }
 
   ionViewDidLoad() {

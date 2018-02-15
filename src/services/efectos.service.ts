@@ -10,9 +10,13 @@ export class EfectosService{
       
       public getEfectos(){
         return this.afDB.list('efectos/');
-        //return this.efectos;
-          
+        //return this.efectos;          
       }
+
+      public buscarEfectos(){
+        return this.afDB.database.ref().child('efectos').orderByChild('tipo').equalTo('Ametralladora');
+      }
+
       public getEfecto(id){
         return this.afDB.object('efectos/'+id);
         //return this.efectos.filter(function(e, i){ return e.id == id  })[0] || {id:null,title:null,description:null};
